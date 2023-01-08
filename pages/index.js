@@ -1,10 +1,11 @@
 import { Inter } from "@next/font/google";
 import {
-  Header,
   VideoWedding,
   Invitation,
   EventDate,
   Gallery,
+  CommentForm,
+  SubFooter,
 } from "../components";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -12,12 +13,13 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <>
-      <Header />
       <section>
         <VideoWedding />
         <Invitation />
         <EventDate />
         <Gallery />
+        <CommentForm />
+        <SubFooter />
       </section>
     </>
   );

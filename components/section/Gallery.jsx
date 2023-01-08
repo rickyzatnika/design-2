@@ -43,11 +43,11 @@ const Gallery = () => {
           plugins={[lgThumbnail, lgZoom]}
           addClass={true}
           isMobile
-          elementClassNames="grid grid-cols-2 sm:grid-cols-3 gap-2"
+          elementClassNames="grid grid-cols-2 sm:grid-cols-3 gap-1"
         >
           <Link href="https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1406&q=80">
             <Image
-              className="img-responsive"
+              className="img-responsive rounded"
               src="https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1406&q=80"
               alt="Jasa Undangan Digital - ryza.inkara.id"
               width={100}
@@ -59,7 +59,7 @@ const Gallery = () => {
           </Link>
           <Link href="https://images.unsplash.com/photo-1615825451410-20bb862f3024?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
             <Image
-              className="img-responsive"
+              className="img-responsive rounded"
               src="https://images.unsplash.com/photo-1615825451410-20bb862f3024?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
               alt="Jasa Undangan Digital - ryza.inkara.id"
               width={100}
@@ -76,7 +76,7 @@ const Gallery = () => {
               layout="responsive"
               objectFit="cover"
               objectPosition="center"
-              className="img-responsive"
+              className="img-responsive rounded"
               src="/img/asset1.jpg"
               alt="Jasa Undangan Digital - ryza.inkara.id"
             />
@@ -88,7 +88,7 @@ const Gallery = () => {
               layout="responsive"
               objectFit="cover"
               objectPosition="center"
-              className="img-responsive"
+              className="img-responsive rounded"
               src="/img/asset2.jpg"
               alt="Jasa Undangan Digital - ryza.inkara.id"
             />
@@ -100,7 +100,7 @@ const Gallery = () => {
               layout="responsive"
               objectFit="cover"
               objectPosition="center"
-              className="img-responsive"
+              className="img-responsive rounded"
               src="/img/asset3.jpg"
               alt="Jasa Undangan Digital - ryza.inkara.id"
             />
@@ -112,7 +112,7 @@ const Gallery = () => {
               layout="responsive"
               objectFit="cover"
               objectPosition="center"
-              className="img-responsive"
+              className="img-responsive rounded"
               src="/img/asset3.jpg"
               alt="Jasa Undangan Digital - ryza.inkara.id"
             />
@@ -124,7 +124,7 @@ const Gallery = () => {
               layout="responsive"
               objectFit="cover"
               objectPosition="center"
-              className="img-responsive"
+              className="img-responsive rounded"
               src="/img/asset3.jpg"
               alt="Jasa Undangan Digital - ryza.inkara.id"
             />
@@ -136,7 +136,7 @@ const Gallery = () => {
               layout="responsive"
               objectFit="cover"
               objectPosition="center"
-              className="img-responsive"
+              className="img-responsive rounded"
               src="/img/asset3.jpg"
               alt="Jasa Undangan Digital - ryza.inkara.id"
             />

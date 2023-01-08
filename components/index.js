@@ -6,3 +6,5 @@ export { default as VideoWedding } from "./section/Video";
 export { default as Invitation } from "./section/Invitation";
 export { default as EventDate } from "./section/EventDate";
 export { default as Gallery } from "./section/Gallery";
+export { default as SubFooter } from "./section/SubFooter";
+export { default as CommentForm } from "./commentForm";

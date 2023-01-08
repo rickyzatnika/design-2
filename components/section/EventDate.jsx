@@ -13,7 +13,7 @@ const EventDate = () => {
             <h3 className="invitation text-4xl sm:text-5xl italic text-orange-900/80">
               Akad Nikah
             </h3>
-            <p className="pt-3 text-[#777] text-sm w-4/6 mx-auto sm:text-md">
+            <p className="pt-3 text-[#666] text-md w-4/6 mx-auto sm:text-lg backdrop-blur">
               Pukul 07.30 WIB s/d 08.00 WIB
             </p>
           </div>
@@ -21,7 +21,7 @@ const EventDate = () => {
             <h3 className="invitation text-4xl sm:text-5xl italic text-orange-900/80">
               Resepsi
             </h3>
-            <p className="pt-3 text-[#777] text-sm w-4/6 mx-auto sm:text-md">
+            <p className="pt-3 text-[#666] text-md w-4/6 mx-auto sm:text-lg backdrop-blur">
               Pukul 10.00 WIB s/d 15.00 WIB
             </p>
           </div>
@@ -30,7 +30,7 @@ const EventDate = () => {
           Sabtu, 5 Agustus 2023
         </p>
         <CountDownTimer />
-        <div className="bg-white flex flex-col leading-relaxed items-center justify-center p-6 mt-20">
+        <div className="bg-white/70 backdrop-blur-sm shadow-lg rounded shadow-black/10 flex flex-col leading-relaxed items-center justify-center p-6 mt-20">
           <h6 className="invitation text-4xl pb-3 text-orange-900">Tempat :</h6>
           <p className="w-5/6 text-center pb-5 text-[#555]">
             Hotel Savoy Homann, Jl. Asia Afrika No.112, Cikawao, Kec. Lengkong,
