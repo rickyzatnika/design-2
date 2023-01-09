@@ -1,7 +1,7 @@
 import dbConnection from "../../lib/db";
 import User from "../../lib/models";
 
-const handler = async (req, res) => {
+const Handler = async (req, res) => {
   if (req.method === "POST") {
     const { name, message, presence, attend, createdAt } = req.body;
     try {
@@ -20,4 +20,4 @@ const handler = async (req, res) => {
   }
 };
 
-export default dbConnection(handler);
+export default dbConnection(Handler);
