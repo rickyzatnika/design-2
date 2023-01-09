@@ -30,7 +30,7 @@ const CommentForm = () => {
 
   const getComment = async () => {
     const response = await axios.get("http://localhost:3000/api/hadeuh");
-    const result = await response.data;
+    const result = response.data;
 
     setDatas(result);
   };
