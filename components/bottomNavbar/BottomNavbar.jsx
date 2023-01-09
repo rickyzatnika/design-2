@@ -54,7 +54,6 @@ const BottomNavbar = () => {
             href="http://localhost:3000/#event"
             className="block"
             scroll={false}
-            passHref
           >
             <li className="mx-auto delay-200 hover:delay-75  right-0 flex flex-col items-center justify-center transition-all duration-100 rounded-md ease-linear text-white hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
               <RiCalendarEventLine size={22} />
@@ -65,7 +64,6 @@ const BottomNavbar = () => {
             href="http://localhost:3000/#gallery"
             className="block"
             scroll={false}
-            passHref
           >
             <li className="mx-auto delay-200 hover:delay-75  right-0 flex flex-col items-center justify-center transition-all duration-100 rounded-md ease-linear text-white hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
               <TfiGallery size={22} />
@@ -76,14 +74,13 @@ const BottomNavbar = () => {
             href="http://localhost:3000/#wish"
             className="block"
             scroll={false}
-            passHref
           >
             <li className="mx-auto delay-200 hover:delay-75  right-0 flex flex-col items-center justify-center transition-all duration-100 rounded-md ease-linear text-white hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
               <AiOutlineRedEnvelope size={22} />
               Wishes
             </li>
           </Link>
-          <Link href="/gifts" className="block" passHref>
+          <Link href="gifts" className="block" passHref>
             <li className="mx-auto delay-200 hover:delay-75  right-0 flex flex-col items-center justify-center transition-all duration-100 rounded-md ease-linear text-white hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
               <AiOutlineGift size={22} />
               Gifts

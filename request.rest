@@ -1,0 +1,16 @@
+###
+GET http://localhost:3000/api/hadeuh
+
+
+###
+POST http://localhost:3000/api/comment
+Content-Type: application/json
+
+{
+    "name" : "comment",
+    "message" : "akjshkdsa",
+    "presence" : "hadir",
+    "attend" : "3",
+    "createdAt" : "Monday, January 9, 2023 9:52 AM"
+
+}

@@ -41,7 +41,7 @@ export default function CountDownTimer({ ...props }) {
 
   return (
     <>
-      <div className="w-full flex justify-between h-full pt-8">
+      <div className="w-full flex items-center sm:justify-evenly justify-center gap-1 h-full pt-8">
         {/* Timer Days */}
         <div className=" flex flex-col items-center ">
           <div className="p-3 shadow-md shadow-[#cacaca] backdrop-blur-xl rounded">

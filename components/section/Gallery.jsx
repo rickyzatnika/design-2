@@ -46,100 +46,116 @@ const Gallery = () => {
           elementClassNames="grid grid-cols-2 sm:grid-cols-3 gap-1"
         >
           <Link href="https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1406&q=80">
-            <Image
-              className="img-responsive rounded"
-              src="https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1406&q=80"
-              alt="Jasa Undangan Digital - ryza.inkara.id"
-              width={100}
-              height={100}
-              layout="responsive"
-              objectFit="cover"
-              objectPosition="center"
-            />
+            <div>
+              <Image
+                className="img-responsive rounded"
+                src="https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1406&q=80"
+                alt="Jasa Undangan Digital - ryza.inkara.id"
+                width={100}
+                height={100}
+                layout="responsive"
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </div>
           </Link>
           <Link href="https://images.unsplash.com/photo-1615825451410-20bb862f3024?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
-            <Image
-              className="img-responsive rounded"
-              src="https://images.unsplash.com/photo-1615825451410-20bb862f3024?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-              alt="Jasa Undangan Digital - ryza.inkara.id"
-              width={100}
-              height={100}
-              layout="responsive"
-              objectFit="cover"
-              objectPosition="center"
-            />
+            <div>
+              <Image
+                className="img-responsive rounded"
+                src="https://images.unsplash.com/photo-1615825451410-20bb862f3024?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                alt="Jasa Undangan Digital - ryza.inkara.id"
+                width={100}
+                height={100}
+                layout="responsive"
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </div>
           </Link>
           <Link href="/img/asset1.jpg">
-            <Image
-              width={100}
-              height={100}
-              layout="responsive"
-              objectFit="cover"
-              objectPosition="center"
-              className="img-responsive rounded"
-              src="/img/asset1.jpg"
-              alt="Jasa Undangan Digital - ryza.inkara.id"
-            />
+            <div>
+              <Image
+                width={100}
+                height={100}
+                layout="responsive"
+                objectFit="cover"
+                objectPosition="center"
+                className="img-responsive rounded"
+                src="/img/asset1.jpg"
+                alt="Jasa Undangan Digital - ryza.inkara.id"
+              />
+            </div>
           </Link>
           <Link href="/img/asset2.jpg">
-            <Image
-              width={100}
-              height={100}
-              layout="responsive"
-              objectFit="cover"
-              objectPosition="center"
-              className="img-responsive rounded"
-              src="/img/asset2.jpg"
-              alt="Jasa Undangan Digital - ryza.inkara.id"
-            />
+            <div>
+              <Image
+                width={100}
+                height={100}
+                layout="responsive"
+                objectFit="cover"
+                objectPosition="center"
+                className="img-responsive rounded"
+                src="/img/asset2.jpg"
+                alt="Jasa Undangan Digital - ryza.inkara.id"
+              />
+            </div>
           </Link>
           <Link href="/img/asset3.jpg">
-            <Image
-              width={100}
-              height={100}
-              layout="responsive"
-              objectFit="cover"
-              objectPosition="center"
-              className="img-responsive rounded"
-              src="/img/asset3.jpg"
-              alt="Jasa Undangan Digital - ryza.inkara.id"
-            />
+            <div>
+              <Image
+                width={100}
+                height={100}
+                layout="responsive"
+                objectFit="cover"
+                objectPosition="center"
+                className="img-responsive rounded"
+                src="/img/asset3.jpg"
+                alt="Jasa Undangan Digital - ryza.inkara.id"
+              />
+            </div>
           </Link>
           <Link href="/img/asset3.jpg">
-            <Image
-              width={100}
-              height={100}
-              layout="responsive"
-              objectFit="cover"
-              objectPosition="center"
-              className="img-responsive rounded"
-              src="/img/asset3.jpg"
-              alt="Jasa Undangan Digital - ryza.inkara.id"
-            />
+            <div>
+              <Image
+                width={100}
+                height={100}
+                layout="responsive"
+                objectFit="cover"
+                objectPosition="center"
+                className="img-responsive rounded"
+                src="/img/asset3.jpg"
+                alt="Jasa Undangan Digital - ryza.inkara.id"
+              />
+            </div>
           </Link>
           <Link href="/img/asset3.jpg">
-            <Image
-              width={100}
-              height={100}
-              layout="responsive"
-              objectFit="cover"
-              objectPosition="center"
-              className="img-responsive rounded"
-              src="/img/asset3.jpg"
-              alt="Jasa Undangan Digital - ryza.inkara.id"
-            />
+            <div>
+              <Image
+                width={100}
+                height={100}
+                layout="responsive"
+                objectFit="cover"
+                objectPosition="center"
+                className="img-responsive rounded"
+                src="/img/asset3.jpg"
+                alt="Jasa Undangan Digital - ryza.inkara.id"
+              />
+            </div>
           </Link>
           <Link href="/img/asset3.jpg">
-            <Image
-              width={100}
-              height={100}
-              layout="responsive"
-              objectFit="cover"
-              objectPosition="center"
-              className="img-responsive rounded"
-              src="/img/asset3.jpg"
-              alt="Jasa Undangan Digital - ryza.inkara.id"
-            />
+            <div>
+              <Image
+                width={100}
+                height={100}
+                layout="responsive"
+                objectFit="cover"
+                objectPosition="center"
+                className="img-responsive rounded"
+                src="/img/asset3.jpg"
+                alt="Jasa Undangan Digital - ryza.inkara.id"
+              />
+            </div>
           </Link>
         </LightGallery>
       </div>

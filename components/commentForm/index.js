@@ -1,73 +1,100 @@
-import { useState, useEffect } from "react";
-import Select from "react-select";
-
-const options = [
-  { value: "hadir", label: "Hadir" },
-  { value: "tidak hadir", label: "Tidak Hadir" },
-];
+import { useForm } from "react-hook-form";
+import moment from "moment";
+import Swal from "sweetalert2";
+import axios from "axios";
+import { ImPushpin } from "react-icons/im";
+import { useEffect, useState } from "react";
 
 const CommentForm = () => {
-  const [show, setShow] = useState(false);
-  const [value, setValue] = useState(false);
+  const { register, handleSubmit, reset } = useForm();
+  const [datas, setDatas] = useState([]);
+  const formSubmit = async ({ name, message, presence, attend }) => {
+    await axios
+      .post("/api/comment", {
+        name: name,
+        message: message,
+        presence: presence,
+        attend: attend,
+        createdAt: moment().format("LLLL"),
+      })
+      .then(() => {
+        Swal.fire("Terkirim", "Terima Kasih Banyak", "success"), reset();
+        window.location.reload;
+      })
+      .catch((err) => {
+        console.log(err);
+        Swal.fire("Error", "Server Timeout", "error");
+        reset();
+      });
+  };
 
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setValue(value);
-    setShow(true);
+  const getComment = async () => {
+    const response = await axios.get("api/hadeuh");
+    const result = await response.data;
+
+    setDatas(result);
   };
 
   useEffect(() => {
-    if (value === "") {
-      setShow(false);
-    }
-  }, [value]);
+    getComment();
+  });
 
   return (
     <>
-      <div id="wish" className="w-full h-full pt-10 sm:py-40">
+      <div
+        id="wish"
+        className="w-full h-full mt-10 py-10 sm:my-40 px-2 bg-amber-200/60"
+      >
         <h3 className="text-4xl text-amber-800 mx-auto sm:text-6xl invitation text-center border-b border-amber-900 pb-2 w-fit mb-10">
           Tinggalkan Pesan dan Kehadiran
         </h3>
-        <form className="w-full px-0 sm:px-20 flex flex-col">
+        <form
+          onSubmit={handleSubmit(formSubmit)}
+          className="w-full px-0 sm:px-20 flex flex-col "
+        >
           <input
             type="text"
             placeholder="Nama"
-            className="w-full py-2 px-4 focus:outline-none rounded text-[#777]"
+            className="w-full py-2 px-4  rounded text-[#777] focus:outline-amber-800  "
+            {...register("name", { required: true })}
           />
+
           <div className="pt-3">
             <textarea
               name=""
               cols="100"
               rows="10"
-              className="w-full p-4 focus:outline-none rounded text-[#777]"
+              className="w-full p-4  rounded text-[#777] focus:outline-amber-800"
               placeholder="Pesan . . ."
-              onChange={handleChange}
+              {...register("message", { required: true })}
             ></textarea>
           </div>
-          {show && (
-            <>
-              <div className="py-1 sm:py-3">
-                <p className="bg-white text-center py-1 text-amber-900 rounded">
-                  Kehadiran
-                </p>
-                <Select
-                  options={options}
-                  className="border-none focus:outline-none focus:ring-0"
-                />
-              </div>
-              <div className="py-1 sm:py-3">
-                <p className="bg-white text-center py-1 text-amber-900 rounded">
-                  Jumlah Orang yang Hadir
-                </p>
-                <input
-                  type="number"
-                  placeholder="0"
-                  className="w-full p-2 border border-gray-300 focus:outline-none rounded text-[#777]"
-                />
-              </div>
-            </>
-          )}
-
+          <div className="py-1 sm:py-3">
+            <p className="bg-white text-center py-1 text-amber-900 rounded">
+              Kehadiran
+            </p>
+            <select
+              className="w-full p-2 text-[#777] focus:outline-amber-800 "
+              {...register("presence", { required: true })}
+            >
+              <option value="">Select...</option>
+              <option value="hadir">Hadir</option>
+              <option value="tidak hadir">Tidak Hadir</option>
+            </select>
+          </div>
+          <div className="py-1 sm:py-3">
+            <p className="bg-white text-center py-1 text-amber-900 rounded">
+              Berapa Orang yang Hadir
+            </p>
+            <div className="flex items-center  border  bg-white">
+              <input
+                type="number"
+                placeholder="0"
+                className="w-full p-2 rounded text-[#333] focus:outline-amber-800"
+                {...register("attend", { required: true })}
+              />
+            </div>
+          </div>
           <button
             type="submit"
             className="rounded py-2 px-6 mt-3 bg-amber-800 hover:bg-amber-900 transition-all duration-100 ease-linear hover:text-white text-[#E7E7E7]"
@@ -75,6 +102,49 @@ const CommentForm = () => {
             Kirim
           </button>
         </form>
+      </div>
+      <div className="w-full h-full py-4 px-2 sm:px-6 bg-amber-200/60 my-14 rounded">
+        <div className="mb-4 bg-white/70 p-4 shadow-lg mt-6">
+          <div className="items-center border-b border-amber-900/40 pb-1 mb-4">
+            <div className="flex items-center justify-between">
+              <div className="antialiased flex items-center gap-1">
+                <ImPushpin className="text-zinc-700" />
+                <p className="text-amber-800/80 text-lg sm:text-xl">
+                  Ryza.inkara.id
+                </p>
+              </div>
+            </div>
+            <em className="text-sm text-[#555]">
+              Monday, January 9, 2023 9:52 AM
+            </em>
+          </div>
+          <p className="mb-6 text-[#555]">
+            Happy wedding Ridwan & Winda, semoga menjadi keluarga yang Sakinah,
+            Mawadah & Warohmah.. <br /> Amiin .. 🤲{" "}
+          </p>
+        </div>
+        {datas?.map((data, i) => (
+          <div key={i} className="mb-4 bg-white/70 p-4 relative shadow-lg">
+            <div className="items-center border-b border-amber-900/40 pb-1 mb-4">
+              <div className="flex items-center justify-between">
+                <p className="text-amber-800/80 capitalize text-lg sm:text-xl">
+                  {data.name}
+                </p>
+                <em
+                  className={
+                    data.presence === "hadir"
+                      ? "bg-green-500 capitalize p-1 text-white absolute top-0 right-0 rounded-bl-md text-sm"
+                      : "bg-red-400 capitalize p-1 text-white absolute top-0 right-0 rounded-bl-md text-sm"
+                  }
+                >
+                  {data.presence}
+                </em>
+              </div>
+              <em className="text-sm text-[#555]">{data.createdAt}</em>
+            </div>
+            <p className="mb-6 text-[#555]">{data.message}</p>
+          </div>
+        ))}
       </div>
     </>
   );
