@@ -10,7 +10,7 @@ const CommentForm = () => {
   const [datas, setDatas] = useState([]);
   const formSubmit = async ({ name, message, presence, attend }) => {
     await axios
-      .post("http://localhost:3000/api/comment", {
+      .post("http://wedding-second.vercel.app/api/comment", {
         name: name,
         message: message,
         presence: presence,
@@ -29,7 +29,9 @@ const CommentForm = () => {
   };
 
   const getComment = async () => {
-    const response = await axios.get("http://localhost:3000/api/hadeuh");
+    const response = await axios.get(
+      "https://wedding-second.vercel.app/api/hadeuh"
+    );
     const result = response.data;
 
     setDatas(result);
