@@ -33,6 +33,7 @@ const CommentForm = () => {
     const response = await fetch(
       "https://wedding-second.vercel.app/api/hadeuh"
     );
+
     const result = await response.json();
 
     setDatas(result);

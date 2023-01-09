@@ -51,7 +51,7 @@ const BottomNavbar = () => {
             </li>
           </Link>
           <Link
-            href="http://localhost:3000/#event"
+            href="https://wedding-second.vercel.app/#event"
             className="block"
             scroll={false}
           >
@@ -61,7 +61,7 @@ const BottomNavbar = () => {
             </li>
           </Link>
           <Link
-            href="http://localhost:3000/#gallery"
+            href="https://wedding-second.vercel.app/#gallery"
             className="block"
             scroll={false}
           >
@@ -71,7 +71,7 @@ const BottomNavbar = () => {
             </li>
           </Link>
           <Link
-            href="http://localhost:3000/#wish"
+            href="https://wedding-second.vercel.app/#wish"
             className="block"
             scroll={false}
           >
