@@ -1,7 +1,7 @@
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import moment from "moment";
 import Swal from "sweetalert2";
-import axios from "axios";
 import { ImPushpin } from "react-icons/im";
 import { useEffect, useState } from "react";
 
@@ -10,7 +10,7 @@ const CommentForm = () => {
   const [datas, setDatas] = useState([]);
   const formSubmit = async ({ name, message, presence, attend }) => {
     await axios
-      .post(`${process.env.POST_ENDPOINT_URI}/comment`, {
+      .post("/api/comment", {
         name: name,
         message: message,
         presence: presence,
@@ -19,7 +19,8 @@ const CommentForm = () => {
       })
       .then(() => {
         Swal.fire("Terkirim", "Terima Kasih Banyak", "success"), reset();
-        window.location.reload;
+        location.reload();
+        return false;
       })
       .catch((err) => {
         console.log(err);
@@ -29,15 +30,15 @@ const CommentForm = () => {
   };
 
   const getComment = async () => {
-    const response = await axios.get(`${process.env.GET_ENDPOINT_URI}/hadeuh`);
-    const result = response.data;
+    const response = await fetch("/api/hadeuh");
+    const result = await response.json();
 
     setDatas(result);
   };
 
   useEffect(() => {
     getComment();
-  });
+  }, []);
 
   return (
     <>
@@ -90,7 +91,7 @@ const CommentForm = () => {
               <input
                 type="number"
                 placeholder="0"
-                className="w-full p-2 rounded text-[#333] focus:outline-amber-800"
+                className="w-full p-2 rounded text-[#333] focus:outline-amber-800 "
                 {...register("attend", { required: true })}
               />
             </div>
@@ -103,28 +104,38 @@ const CommentForm = () => {
           </button>
         </form>
       </div>
-      <div className="w-full h-full py-4 px-2 sm:px-6 bg-amber-200/60 my-14 rounded">
-        <div className="mb-4 bg-white/70 p-4 shadow-lg mt-6">
+      <div className="w-full h-full py-4 px-2 sm:px-6 bg-amber-200/60 my-14 rounded relative">
+        <h2 className=" px-1 text-orange-900 text-xl">
+          Total Komentar :{" "}
+          <span className={datas.length < 10 ? "visible" : "hidden"}>0</span>
+          {datas.length}
+        </h2>
+
+        <div className="mb-4 antialiased bg-white/70 p-4 shadow-lg mt-6">
           <div className="items-center border-b border-amber-900/40 pb-1 mb-4">
             <div className="flex items-center justify-between">
-              <div className="antialiased flex items-center gap-1">
+              <div className=" flex items-center gap-1">
                 <ImPushpin className="text-zinc-700" />
                 <p className="text-amber-800/80 text-lg sm:text-xl">
                   Ryza.inkara.id
                 </p>
               </div>
             </div>
-            <em className="text-sm text-[#555]">
+            <em className="text-sm text-[#989898]">
               Monday, January 9, 2023 9:52 AM
             </em>
           </div>
-          <p className="mb-6 text-[#555]">
+          <p className="mb-6 text-[#555] text-lg">
             Happy wedding Ridwan & Winda, semoga menjadi keluarga yang Sakinah,
             Mawadah & Warohmah.. <br /> Amiin .. 🤲{" "}
           </p>
         </div>
-        {datas?.map((data, i) => (
-          <div key={i} className="mb-4 bg-white/70 p-4 relative shadow-lg">
+
+        {datas.map((data, i) => (
+          <div
+            key={i}
+            className="antialiased mb-4 bg-white/70 p-4 relative shadow-lg"
+          >
             <div className="items-center border-b border-amber-900/40 pb-1 mb-4">
               <div className="flex items-center justify-between">
                 <p className="text-amber-800/80 capitalize text-lg sm:text-xl">
@@ -140,9 +151,9 @@ const CommentForm = () => {
                   {data.presence}
                 </em>
               </div>
-              <em className="text-sm text-[#555]">{data.createdAt}</em>
+              <em className="text-sm text-[#989898]">{data.createdAt}</em>
             </div>
-            <p className="mb-6 text-[#555]">{data.message}</p>
+            <p className="mb-6 text-[#555] text-lg">{data.message}</p>
           </div>
         ))}
       </div>

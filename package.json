@@ -2,6 +2,7 @@
   "name": "design-2",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://wedding-second.vercel.app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
