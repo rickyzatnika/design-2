@@ -50,31 +50,19 @@ const BottomNavbar = () => {
               Home
             </li>
           </Link>
-          <Link
-            href="https://ridwan-winda.vercel.app/#event"
-            className="block"
-            scroll={false}
-          >
+          <Link href="#event" className="block" scroll={false}>
             <li className="mx-auto delay-100 hover:delay-[1ms]  right-0 flex flex-col items-center justify-center transition-all duration-100 rounded-md ease-linear text-[#E6E6E6] hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
               <RiCalendarEventLine size={22} />
               Event
             </li>
           </Link>
-          <Link
-            href="https://ridwan-winda.vercel.app/#gallery"
-            className="block"
-            scroll={false}
-          >
+          <Link href="#gallery" className="block" scroll={false}>
             <li className="mx-auto delay-100 hover:delay-[1ms]  right-0 flex flex-col items-center justify-center transition-all duration-100 rounded-md ease-linear text-[#E6E6E6] hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
               <TfiGallery size={22} />
               Gallery
             </li>
           </Link>
-          <Link
-            href="https://ridwan-winda.vercel.app/#wish"
-            className="block"
-            scroll={false}
-          >
+          <Link href="#wish" className="block" scroll={false}>
             <li className="mx-auto delay-100 hover:delay-[1ms]  right-0 flex flex-col items-center justify-center transition-all duration-100 rounded-md ease-linear text-[#E6E6E6] hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
               <AiOutlineRedEnvelope size={22} />
               Wishes
