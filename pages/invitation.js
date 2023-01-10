@@ -8,7 +8,7 @@ import {
   Layout,
 } from "../components";
 
-const Invite = () => {
+const Invite = ({ posts }) => {
   return (
     <>
       <Layout>
@@ -16,7 +16,7 @@ const Invite = () => {
         <Invitation />
         <EventDate />
         <Gallery />
-        <CommentForm />
+        <CommentForm posts={posts} />
         <SubFooter />
       </Layout>
     </>
@@ -24,3 +24,15 @@ const Invite = () => {
 };
 
 export default Invite;
+
+export async function getServerSideProps() {
+  const req = await fetch(
+    `${process.env.NEXT_PUBLIC_PRODUCTION_GET}/api/hadeuh`
+  );
+  const posts = await req.json();
+  return {
+    props: {
+      posts,
+    },
+  };
+}

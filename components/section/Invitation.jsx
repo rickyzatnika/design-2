@@ -1,4 +1,5 @@
 import Image from "next/legacy/image";
+import { motion } from "framer-motion";
 
 const Invitation = () => {
   return (
@@ -27,12 +28,23 @@ const Invitation = () => {
               priority
             />
 
-            <h3 className="text-4xl text-orange-800/90 font-semibold py-2 invitation">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              h3
+              className="text-4xl text-orange-800/90 font-semibold py-2 invitation"
+            >
               Ridwan Kurniawan
-            </h3>
-            <p className="text-[#666] ">
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-[#666] text-lg font-semibold text-orange-900/90"
+            >
               Putra Sulung dari Bpk.H.Djaja Sukmara dan Ibu Melisa Sukmara
-            </p>
+            </motion.p>
           </div>
           <div className="w-full h-full text-center rounded-full">
             <Image
@@ -44,12 +56,24 @@ const Invitation = () => {
               objectFit="contain"
               priority
             />
-            <h3 className="text-4xl text-orange-800/90 font-semibold py-2 invitation">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={false}
+              h3
+              className="text-4xl text-orange-800/90 font-semibold py-2 invitation"
+            >
               Winda Margaretha
-            </h3>
-            <p className="text-[#666] ">
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-[#666] text-lg font-semibold text-orange-900/90"
+            >
               Putra Bungsu dari Bpk.Lionel Margareth dan Ibu Liana Margareth
-            </p>
+            </motion.p>
           </div>
         </div>
       </div>

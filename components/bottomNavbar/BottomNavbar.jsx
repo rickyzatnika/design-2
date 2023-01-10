@@ -45,7 +45,7 @@ const BottomNavbar = () => {
       >
         <ul className="antialiased mx-auto grid grid-cols-5 text-center items-center justify-center w-full ">
           <Link href="invitation" className="block " passHref>
-            <li className="mx-auto delay-200 hover:delay-75  right-0 flex flex-col items-center justify-center  transition-all duration-100 rounded-md ease-linear text-white hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
+            <li className="mx-auto delay-100 hover:delay-[1ms]  right-0 flex flex-col items-center justify-center  transition-all duration-100 rounded-md ease-linear text-[#E6E6E6] hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
               <AiOutlineHome size={22} />
               Home
             </li>
@@ -55,7 +55,7 @@ const BottomNavbar = () => {
             className="block"
             scroll={false}
           >
-            <li className="mx-auto delay-200 hover:delay-75  right-0 flex flex-col items-center justify-center transition-all duration-100 rounded-md ease-linear text-white hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
+            <li className="mx-auto delay-100 hover:delay-[1ms]  right-0 flex flex-col items-center justify-center transition-all duration-100 rounded-md ease-linear text-[#E6E6E6] hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
               <RiCalendarEventLine size={22} />
               Event
             </li>
@@ -65,7 +65,7 @@ const BottomNavbar = () => {
             className="block"
             scroll={false}
           >
-            <li className="mx-auto delay-200 hover:delay-75  right-0 flex flex-col items-center justify-center transition-all duration-100 rounded-md ease-linear text-white hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
+            <li className="mx-auto delay-100 hover:delay-[1ms]  right-0 flex flex-col items-center justify-center transition-all duration-100 rounded-md ease-linear text-[#E6E6E6] hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
               <TfiGallery size={22} />
               Gallery
             </li>
@@ -75,13 +75,13 @@ const BottomNavbar = () => {
             className="block"
             scroll={false}
           >
-            <li className="mx-auto delay-200 hover:delay-75  right-0 flex flex-col items-center justify-center transition-all duration-100 rounded-md ease-linear text-white hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
+            <li className="mx-auto delay-100 hover:delay-[1ms]  right-0 flex flex-col items-center justify-center transition-all duration-100 rounded-md ease-linear text-[#E6E6E6] hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
               <AiOutlineRedEnvelope size={22} />
               Wishes
             </li>
           </Link>
           <Link href="gifts" className="block" passHref>
-            <li className="mx-auto delay-200 hover:delay-75  right-0 flex flex-col items-center justify-center transition-all duration-100 rounded-md ease-linear text-white hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
+            <li className="mx-auto delay-100 hover:delay-[1ms]  right-0 flex flex-col items-center justify-center transition-all duration-100 rounded-md ease-linear text-[#E6E6E6] hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
               <AiOutlineGift size={22} />
               Gifts
             </li>

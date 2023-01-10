@@ -5,9 +5,10 @@ import Swal from "sweetalert2";
 import { ImPushpin } from "react-icons/im";
 import { useEffect, useState } from "react";
 
-const CommentForm = () => {
+const CommentForm = ({ posts }) => {
   const { register, handleSubmit, reset } = useForm();
-  const [datas, setDatas] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   const formSubmit = async ({ name, message, presence, attend }) => {
     await axios
       .post(`${process.env.NEXT_PUBLIC_PRODUCTION_POST}/api/comment`, {
@@ -18,36 +19,52 @@ const CommentForm = () => {
         createdAt: moment().format("Do MMMM YYYY, h:mm a"),
       })
       .then(() => {
-        Swal.fire("Terkirim", "Terima Kasih Banyak", "success"), reset();
-        location.reload();
-        return false;
+        setLoading(true);
+
+        setTimeout(() => {
+          Swal.fire({
+            title: "Terkirim",
+            icon: "success",
+            text: "Terima Kasih atas Partisipasinya",
+            showConfirmButton: false,
+            showClass: {
+              popup: "animate__animated animate__zoomIn",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOut",
+            },
+          }),
+            reset();
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
+        }, 2000);
       })
       .catch((err) => {
         console.log(err);
-        Swal.fire("Error", "Server Timeout", "error");
-        reset();
+        Swal.fire({
+          title: "Error",
+          icon: "error",
+          text: "Kesalahan Input Nama atau Pesan, Ulangi menggunakan Nama lengkap dan Minimum 10 Karakter Ucapan",
+        });
       });
   };
 
-  const getComment = async () => {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_PRODUCTION_GET}/api/hadeuh`
-    );
-
-    const result = await response.json();
-
-    setDatas(result);
-  };
-
   useEffect(() => {
-    getComment();
+    setInterval(() => {
+      setLoading(false);
+    }, 8000);
+    return () =>
+      clearInterval(() => {
+        setLoading(true);
+      });
   }, []);
 
   return (
     <>
       <div
         id="wish"
-        className="w-full h-full mt-10 py-10 sm:my-40 px-2 bg-amber-200/60"
+        className="w-full backdrop-blur shadow-lg shadow-black/10 h-full mt-10 py-10 sm:my-40  px-2 bg-amber-200/30"
       >
         <h3 className="text-4xl text-amber-800 mx-auto sm:text-6xl invitation text-center border-b border-amber-900 pb-2 w-fit mb-10">
           Tinggalkan Pesan dan Kehadiran
@@ -103,15 +120,15 @@ const CommentForm = () => {
             type="submit"
             className="rounded py-2 px-6 mt-3 bg-amber-800 hover:bg-amber-900 transition-all duration-100 ease-linear hover:text-white text-[#E7E7E7]"
           >
-            Kirim
+            {loading ? "Loading..." : "Kirim"}
           </button>
         </form>
       </div>
-      <div className="w-full h-full py-4 px-2 sm:px-6 bg-amber-200/60 my-14 rounded relative">
-        <h2 className=" px-1 text-orange-900 text-xl">
-          Total Komentar :{" "}
-          <span className={datas.length < 10 ? "visible" : "hidden"}>0</span>
-          {datas.length}
+      <div className="w-full h-full pb-20 backdrop-blur shadow-lg shadow-black/10  pt-4 px-2 sm:px-6 bg-amber-200/20 my-14 rounded relative">
+        <h2 className=" px-1 text-orange-900 text-md">
+          1 -
+          <span className={posts.length < 10 ? "visible" : "hidden"}> 0</span>
+          {posts.length}
         </h2>
 
         <div className="mb-4 antialiased bg-white/70 p-4 shadow-lg mt-6">
@@ -133,32 +150,34 @@ const CommentForm = () => {
             Mawadah & Warohmah.. <br /> Amiin .. 🤲{" "}
           </p>
         </div>
-
-        {datas.map((data, i) => (
-          <div
-            key={i}
-            className="antialiased mb-4 bg-white/70 p-4 relative shadow-lg"
-          >
-            <div className="items-center border-b border-amber-900/40 pb-1 mb-4">
-              <div className="flex items-center justify-between">
-                <p className="text-amber-800/80 capitalize text-lg sm:text-xl">
-                  {data.name}
-                </p>
-                <em
-                  className={
-                    data.presence === "hadir"
-                      ? "bg-green-500 capitalize p-1 text-white absolute top-0 right-0 rounded-bl-md text-sm"
-                      : "bg-red-400 capitalize p-1 text-white absolute top-0 right-0 rounded-bl-md text-sm"
-                  }
-                >
-                  {data.presence}
-                </em>
+        <div className="flex flex-col-reverse ">
+          {posts.map((data, i) => (
+            <div
+              key={i}
+              className="antialiased mb-4 bg-white/70 p-4 relative shadow-lg"
+            >
+              <div className="items-center border-b border-amber-900/40 pb-1 mb-4">
+                <div className="flex flex-row-reverse items-center justify-between">
+                  <span className="text-[#888] relative top-2">{i + 1}</span>
+                  <p className="text-amber-800/80 capitalize text-lg sm:text-xl">
+                    {data.name}
+                  </p>
+                  <em
+                    className={
+                      data.presence === "hadir"
+                        ? "bg-green-500 capitalize p-1 text-white absolute top-0 right-0 rounded-bl-md text-sm"
+                        : "bg-red-400 capitalize p-1 text-white absolute top-0 right-0 rounded-bl-md text-sm"
+                    }
+                  >
+                    {data.presence}
+                  </em>
+                </div>
+                <em className="text-sm text-[#989898]">{data.createdAt}</em>
               </div>
-              <em className="text-sm text-[#989898]">{data.createdAt}</em>
+              <p className="mb-6 text-[#555] text-lg">{data.message}</p>
             </div>
-            <p className="mb-6 text-[#555] text-lg">{data.message}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );

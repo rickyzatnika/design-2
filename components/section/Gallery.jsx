@@ -7,6 +7,7 @@ import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
+import { motion } from "framer-motion";
 
 const LightGallery = dynamic(() => import("lightgallery/react"), {
   ssr: false,
@@ -43,10 +44,15 @@ const Gallery = () => {
           plugins={[lgThumbnail, lgZoom]}
           addClass={true}
           isMobile
-          elementClassNames="grid grid-cols-2 sm:grid-cols-3 gap-1"
+          elementClassNames="grid grid-cols-2 sm:grid-cols-3 gap-1 group "
         >
           <Link href="https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1406&q=80">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="hover:scale-105 shadow-lg shadow-black/10 "
+            >
               <Image
                 className="img-responsive rounded"
                 src="https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1406&q=80"
@@ -57,10 +63,14 @@ const Gallery = () => {
                 objectFit="cover"
                 objectPosition="center"
               />
-            </div>
+            </motion.div>
           </Link>
           <Link href="https://images.unsplash.com/photo-1615825451410-20bb862f3024?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
               <Image
                 className="img-responsive rounded"
                 src="https://images.unsplash.com/photo-1615825451410-20bb862f3024?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
@@ -71,10 +81,14 @@ const Gallery = () => {
                 objectFit="cover"
                 objectPosition="center"
               />
-            </div>
+            </motion.div>
           </Link>
           <Link href="/img/asset1.jpg">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            >
               <Image
                 width={100}
                 height={100}
@@ -85,10 +99,14 @@ const Gallery = () => {
                 src="/img/asset1.jpg"
                 alt="Jasa Undangan Digital - ryza.inkara.id"
               />
-            </div>
+            </motion.div>
           </Link>
           <Link href="/img/asset2.jpg">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            >
               <Image
                 width={100}
                 height={100}
@@ -99,10 +117,14 @@ const Gallery = () => {
                 src="/img/asset2.jpg"
                 alt="Jasa Undangan Digital - ryza.inkara.id"
               />
-            </div>
+            </motion.div>
           </Link>
           <Link href="/img/asset3.jpg">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
               <Image
                 width={100}
                 height={100}
@@ -113,10 +135,14 @@ const Gallery = () => {
                 src="/img/asset3.jpg"
                 alt="Jasa Undangan Digital - ryza.inkara.id"
               />
-            </div>
+            </motion.div>
           </Link>
           <Link href="/img/asset3.jpg">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
               <Image
                 width={100}
                 height={100}
@@ -127,10 +153,14 @@ const Gallery = () => {
                 src="/img/asset3.jpg"
                 alt="Jasa Undangan Digital - ryza.inkara.id"
               />
-            </div>
+            </motion.div>
           </Link>
           <Link href="/img/asset3.jpg">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+            >
               <Image
                 width={100}
                 height={100}
@@ -141,10 +171,14 @@ const Gallery = () => {
                 src="/img/asset3.jpg"
                 alt="Jasa Undangan Digital - ryza.inkara.id"
               />
-            </div>
+            </motion.div>
           </Link>
           <Link href="/img/asset3.jpg">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+            >
               <Image
                 width={100}
                 height={100}
@@ -155,7 +189,7 @@ const Gallery = () => {
                 src="/img/asset3.jpg"
                 alt="Jasa Undangan Digital - ryza.inkara.id"
               />
-            </div>
+            </motion.div>
           </Link>
         </LightGallery>
       </div>

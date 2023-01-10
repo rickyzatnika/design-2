@@ -7,8 +7,8 @@ POST http://localhost:3000/api/comment
 Content-Type: application/json
 
 {
-    "name" : "test",
-    "message" : "akjshkdsa",
+    "name" : "test3",
+    "message" : "aks",
     "presence" : "hadir",
     "attend" : "3",
     "createdAt" : "Monday, January 9, 2023 9:52 AM"
