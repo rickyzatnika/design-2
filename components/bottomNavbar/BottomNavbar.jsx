@@ -51,7 +51,7 @@ const BottomNavbar = () => {
             </li>
           </Link>
           <Link
-            href="https://wedding-second.vercel.app/#event"
+            href="https://ridwan-winda.vercel.app/#event"
             className="block"
             scroll={false}
           >
@@ -61,7 +61,7 @@ const BottomNavbar = () => {
             </li>
           </Link>
           <Link
-            href="https://wedding-second.vercel.app/#gallery"
+            href="https://ridwan-winda.vercel.app/#gallery"
             className="block"
             scroll={false}
           >
@@ -71,7 +71,7 @@ const BottomNavbar = () => {
             </li>
           </Link>
           <Link
-            href="https://wedding-second.vercel.app/#wish"
+            href="https://ridwan-winda.vercel.app/#wish"
             className="block"
             scroll={false}
           >

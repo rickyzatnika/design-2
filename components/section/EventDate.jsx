@@ -40,8 +40,8 @@ const EventDate = () => {
             target="_blank"
             href="https://www.google.com/maps/dir/Hotel+Savoy+Homann,+Jl.+Asia+Afrika+No.112,+Cikawao,+Kec.+Lengkong,+Kota+Bandung,+Jawa+Barat+40261/@-6.9216514,107.6081602,16.5z/data=!4m8!4m7!1m0!1m5!1m1!1s0x2e68e7f53538a3d3:0x9d94980bcb75c0ea!2m2!1d107.610305!2d-6.9221077?hl=id"
           >
-            <button className="rounded-lg bg-gradient-to-tr from-orange-800/80 to-amber-300/80 hover:from-orange-800 hover:to-amber-300 text-white/70 hover:text-white py-2 px-6">
-              Lokasi
+            <button className="rounded-lg bg-gradient-to-tr from-orange-800/80 to-amber-300/80 hover:from-orange-800 hover:to-amber-300 text-[#e6e6e6] hover:text-white py-2 px-6">
+              Google Maps
             </button>
           </Link>
         </div>
