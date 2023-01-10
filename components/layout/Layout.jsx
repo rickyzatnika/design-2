@@ -1,5 +1,6 @@
 import React from "react";
 import BottomNavbar from "../bottomNavbar/BottomNavbar";
+import SoundTrack from "../soundtrack";
 import Footer from "../footer";
 import Header from "../header/Header";
 
@@ -12,6 +13,7 @@ const Layout = ({ children }) => {
           {children}
         </main>
         <BottomNavbar />
+        <SoundTrack />
         <Footer />
       </div>
     </>

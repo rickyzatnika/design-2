@@ -1,7 +1,7 @@
 import dbConnection from "../../lib/db";
 import User from "../../lib/models";
 
-const Handler = async (req, res) => {
+const getUser = async (req, res) => {
   if (req.method === "GET") {
     try {
       const user = await User.find();
@@ -12,4 +12,4 @@ const Handler = async (req, res) => {
   }
 };
 
-export default dbConnection(Handler);
+export default dbConnection(getUser);

@@ -10,12 +10,12 @@ const CommentForm = () => {
   const [datas, setDatas] = useState([]);
   const formSubmit = async ({ name, message, presence, attend }) => {
     await axios
-      .post("https://wedding-second.vercel.app/api/comment", {
+      .post(`${process.env.NEXT_PUBLIC_PRODUCTION_POST}/api/comment`, {
         name: name,
         message: message,
         presence: presence,
         attend: attend,
-        createdAt: moment().format("LLLL"),
+        createdAt: moment().format("Do MMMM YYYY, h:mm a"),
       })
       .then(() => {
         Swal.fire("Terkirim", "Terima Kasih Banyak", "success"), reset();
@@ -31,7 +31,7 @@ const CommentForm = () => {
 
   const getComment = async () => {
     const response = await fetch(
-      "https://wedding-second.vercel.app/api/hadeuh"
+      `${process.env.NEXT_PUBLIC_PRODUCTION_GET}/api/hadeuh`
     );
 
     const result = await response.json();

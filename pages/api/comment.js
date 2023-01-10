@@ -1,23 +1,22 @@
 import dbConnection from "../../lib/db";
 import User from "../../lib/models";
 
-const Handler = async (req, res) => {
+const createUser = async (req, res) => {
   if (req.method === "POST") {
-    const { name, message, presence, attend, createdAt } = req.body;
     try {
-      const user = new User({
-        name,
-        message,
-        presence,
-        attend,
-        createdAt,
+      const create = await new User({
+        name: req.body.name,
+        message: req.body.message,
+        presence: req.body.presence,
+        attend: req.body.attend,
+        createdAt: req.body.createdAt,
       });
-      const userCreated = await user.save();
-      return res.status(200).send(userCreated);
+      create.save();
+      return res.status(200).json(create);
     } catch (error) {
-      console.log(error);
+      res.status(401).send({ msg: error.message });
     }
   }
 };
 
-export default dbConnection(Handler);
+export default dbConnection(createUser);

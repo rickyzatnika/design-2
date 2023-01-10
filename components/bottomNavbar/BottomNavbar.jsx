@@ -44,7 +44,7 @@ const BottomNavbar = () => {
           }`}
       >
         <ul className="antialiased mx-auto grid grid-cols-5 text-center items-center justify-center w-full ">
-          <Link href="/" className="block " passHref>
+          <Link href="invitation" className="block " passHref>
             <li className="mx-auto delay-200 hover:delay-75  right-0 flex flex-col items-center justify-center  transition-all duration-100 rounded-md ease-linear text-white hover:bg-white/90 md:hover:bg-white/50 text-xs hover:text-orange-900/50 font-semibold py-1 px-4 gap-1 ">
               <AiOutlineHome size={22} />
               Home
