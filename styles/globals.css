@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-::-webkit-scrollbar {
-  background-color: transparent;
+/* ::-webkit-scrollbar {
+  display: none;
 }
 ::-webkit-scrollbar-track {
   background: #e6e6e694;
@@ -16,7 +16,7 @@
     rgba(255, 211, 117, 0.856)
   );
   border-radius: 10px;
-}
+} */
 
 .swal2-close {
   color: #16161677 !important;
