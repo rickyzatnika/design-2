@@ -18,8 +18,8 @@ const Invitation = () => {
         </div>
         <div className="w-full grid gap-4 sm:gap-8 grid-cols-1 sm:grid-cols-2 pt-14">
           <motion.div
-            initial={{ opacity: 0, scaleY: 0 }}
-            whileInView={{ opacity: 1, scaleY: 1 }}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             className="w-full h-full text-center mb-6 sm:mb-0"
           >
@@ -51,7 +51,12 @@ const Invitation = () => {
               Putra Sulung dari Bpk.H.Djaja Sukmara dan Ibu Melisa Sukmara
             </motion.p>
           </motion.div>
-          <div className="w-full h-full text-center rounded-full">
+          <motion.div
+            initial={{ opacity: 0, y: 70 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 2, delay: 0.1 }}
+            className="w-full h-full text-center rounded-full"
+          >
             <Image
               src="/img/woman.png"
               alt="profile devi"
@@ -79,7 +84,7 @@ const Invitation = () => {
             >
               Putra Bungsu dari Bpk.Lionel Margareth dan Ibu Liana Margareth
             </motion.p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </>

@@ -13,7 +13,7 @@ const Header = () => {
             </span>
           </Link>
           <h1 className="text-3xl sm:text-3xl font-bold text-orange-900 invitation tracking-wide">
-            Ramdan dan Yuni
+            Ridwan dan Winda
           </h1>
 
           <div className="flex items-center z-30 justify-between absolute left-0 -bottom-8 w-full">

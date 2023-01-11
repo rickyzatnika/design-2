@@ -1,30 +1,46 @@
 import CountDownTimer from "../countdownTimer";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const EventDate = () => {
   return (
     <>
       <div id="event" className="w-full h-full pt-28 sm:pt-44">
-        <h2 className="antialiased border-b pb-4 border-orange-900/40 invitation text-center text-orange-800/80 text-4xl sm:text-6xl">
+        <motion.h2
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="antialiased border-b pb-4 border-orange-900/40 invitation text-center text-orange-800/80 text-4xl sm:text-6xl"
+        >
           Waktu, Tempat & Acara
-        </h2>
+        </motion.h2>
         <div className="grid grid-cols-2 pt-10 sm:pt-20 items-center">
-          <div className="antialiased text-center ">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="antialiased text-center "
+          >
             <h3 className="invitation text-4xl sm:text-5xl italic text-orange-900/80">
               Akad Nikah
             </h3>
             <p className="pt-3 text-[#666] text-md w-4/6 mx-auto sm:text-lg backdrop-blur">
               Pukul 07.30 WIB s/d 08.00 WIB
             </p>
-          </div>
-          <div className="antialiased text-center">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="antialiased text-center"
+          >
             <h3 className="invitation text-4xl sm:text-5xl italic text-orange-900/80">
               Resepsi
             </h3>
             <p className="pt-3 text-[#666] text-md w-4/6 mx-auto sm:text-lg backdrop-blur">
               Pukul 10.00 WIB s/d 15.00 WIB
             </p>
-          </div>
+          </motion.div>
         </div>
         <p className="text-center italic pt-12 sm:pt-14 text-[#555] text-md sm:text-xl tracking-widest">
           Sabtu, 5 Agustus 2023
