@@ -13,7 +13,7 @@ const Layout = dynamic(() =>
   })
 );
 const Invitation = dynamic(() =>
-  import("../components/commentForm", {
+  import("../components/section/Invitation", {
     ssr: false,
   })
 );
