@@ -9,14 +9,10 @@ import dynamic from "next/dynamic";
 
 const Layout = dynamic(() =>
   import("../components/layout/Layout", {
-    ssr: false,
+    ssr: true,
   })
 );
-const Invitation = dynamic(() =>
-  import("../components/section/Invitation", {
-    ssr: false,
-  })
-);
+const Invitation = dynamic(() => import("../components/section/Invitation"));
 
 const Invite = ({ posts }) => {
   return (
