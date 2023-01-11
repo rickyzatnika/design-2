@@ -7,11 +7,7 @@ import {
 } from "../components";
 import dynamic from "next/dynamic";
 
-const Layout = dynamic(() =>
-  import("../components/layout/Layout", {
-    ssr: true,
-  })
-);
+const Layout = dynamic(() => import("../components/layout/Layout"));
 const Invitation = dynamic(() => import("../components/section/Invitation"));
 
 const Invite = ({ posts }) => {
@@ -31,7 +27,7 @@ const Invite = ({ posts }) => {
 
 export default Invite;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const req = await fetch(
     `${process.env.NEXT_PUBLIC_PRODUCTION_GET}/api/hadeuh`
   );
