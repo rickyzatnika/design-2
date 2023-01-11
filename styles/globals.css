@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
 }
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   background: #e6e6e694;
   backdrop-filter: blur(8px) !important;
 }

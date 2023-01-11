@@ -1,12 +1,22 @@
 import {
   VideoWedding,
-  Invitation,
   EventDate,
   Gallery,
   CommentForm,
   SubFooter,
-  Layout,
 } from "../components";
+import dynamic from "next/dynamic";
+
+const Layout = dynamic(() =>
+  import("../components/layout/Layout", {
+    ssr: false,
+  })
+);
+const Invitation = dynamic(() =>
+  import("../components/commentForm", {
+    ssr: false,
+  })
+);
 
 const Invite = ({ posts }) => {
   return (
@@ -25,7 +35,7 @@ const Invite = ({ posts }) => {
 
 export default Invite;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const req = await fetch(
     `${process.env.NEXT_PUBLIC_PRODUCTION_GET}/api/hadeuh`
   );

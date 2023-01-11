@@ -81,8 +81,13 @@ const Gifts = () => {
 
   return (
     <>
-      <div className="w-full bg-gradient-to-t from-amber-400/30 to-[#161616]/10 h-screen flex flex-col items-center justify-center ">
-        <div className=" w-5/6 sm:w-4/6 border bg-white/40 backdrop-blur shadow-lg  py-10 sm:py-20 rounded-3xl">
+      <motion.div
+        initial={{ opacity: 0.1, scaleY: 0 }}
+        whileInView={{ opacity: 1, scaleY: 1 }}
+        transition={{ duration: 1 }}
+        className="w-full bg-gradient-to-br to-amber-400/20 via-white from-purple-400/30 backdrop-blur-sm h-screen flex flex-col items-center justify-center "
+      >
+        <div className=" w-5/6 sm:w-4/6 bg-white/60 shadow-2xl shadow-amber-500/10  py-10 sm:py-20 rounded-3xl">
           <div className="flex items-center justify-center gap-4 mb-5">
             <button
               onClick={showBri}
@@ -168,7 +173,7 @@ const Gifts = () => {
             </div>
           )}
         </div>
-      </div>
+      </motion.div>
       <BottomNavbar />
     </>
   );

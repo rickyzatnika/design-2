@@ -36,11 +36,11 @@ const BottomNavbar = () => {
   return (
     <>
       <nav
-        className={` z-50 fixed bottom-0 left-0 right-0 backdrop-blur rounded-xl w-[90%] sm:w-[55%] shadow-lg shadow-black/40 flex items-center justify-center mx-auto mb-3 transition-all duration-500 delay-75 ease-linear p-2 bg-gradient-to-tr from-orange-800/70 to-amber-200
+        className={` z-50 fixed bottom-0 left-0 right-0 backdrop-blur rounded-xl w-[90%] sm:w-[55%] shadow-md shadow-black/20 flex items-center justify-center mx-auto mb-3 transition-all duration-500 delay-75 ease-linear p-2 bg-gradient-to-t from-amber-700/80  to-amber-200
           ${
             show
               ? "bottom-0 "
-              : "z-50 fixed left-0 -bottom-40 right-0 backdrop-blur rounded-xl w-[90%] sm:w-[55%] shadow-lg shadow-black/40 flex items-center justify-center mx-auto mb-3 opacity-0 transition-all duration-500  delay-100 ease-linear p-2  bg-gradient-to-tr from-amber-200 to-orange-800/70 "
+              : "z-50 fixed left-0 -bottom-40 right-0 backdrop-blur rounded-xl w-[90%] sm:w-[55%] shadow-md shadow-black/20 flex items-center justify-center mx-auto mb-3 opacity-0 transition-all duration-500  delay-100 ease-linear p-2  bg-transparent  "
           }`}
       >
         <ul className="antialiased mx-auto grid grid-cols-5 text-center items-center justify-center w-full ">

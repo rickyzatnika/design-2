@@ -120,7 +120,14 @@ const CommentForm = ({ posts }) => {
             type="submit"
             className="rounded py-2 px-6 mt-3 bg-amber-800 hover:bg-amber-900 transition-all duration-100 ease-linear hover:text-white text-[#E7E7E7]"
           >
-            {loading ? "Loading..." : "Kirim"}
+            {loading ? (
+              <div className="flex items-center justify-center gap-2">
+                <p>loading</p>
+                <div className="animate-spin border-2 border-white border-b-white/20 w-3 h-3 rounded-full"></div>
+              </div>
+            ) : (
+              <p>Kirim</p>
+            )}
           </button>
         </form>
       </div>

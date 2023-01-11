@@ -46,7 +46,7 @@ const Gallery = () => {
           isMobile
           elementClassNames="grid grid-cols-2 sm:grid-cols-3 gap-1 group "
         >
-          <Link href="https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1406&q=80">
+          <Link href="/img/asset2.jpg">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -55,17 +55,18 @@ const Gallery = () => {
             >
               <Image
                 className="img-responsive rounded"
-                src="https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1406&q=80"
+                src="/img/asset2.jpg"
                 alt="Jasa Undangan Digital - ryza.inkara.id"
                 width={100}
                 height={100}
                 layout="responsive"
                 objectFit="cover"
                 objectPosition="center"
+                priority
               />
             </motion.div>
           </Link>
-          <Link href="https://images.unsplash.com/photo-1615825451410-20bb862f3024?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
+          <Link href="/img/asset1.jpg">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -73,13 +74,14 @@ const Gallery = () => {
             >
               <Image
                 className="img-responsive rounded"
-                src="https://images.unsplash.com/photo-1615825451410-20bb862f3024?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                src="/img/asset1.jpg"
                 alt="Jasa Undangan Digital - ryza.inkara.id"
                 width={100}
                 height={100}
                 layout="responsive"
                 objectFit="cover"
                 objectPosition="center"
+                priority
               />
             </motion.div>
           </Link>
@@ -98,6 +100,7 @@ const Gallery = () => {
                 className="img-responsive rounded"
                 src="/img/asset1.jpg"
                 alt="Jasa Undangan Digital - ryza.inkara.id"
+                priority
               />
             </motion.div>
           </Link>
@@ -116,6 +119,7 @@ const Gallery = () => {
                 className="img-responsive rounded"
                 src="/img/asset2.jpg"
                 alt="Jasa Undangan Digital - ryza.inkara.id"
+                priority
               />
             </motion.div>
           </Link>
@@ -132,8 +136,9 @@ const Gallery = () => {
                 objectFit="cover"
                 objectPosition="center"
                 className="img-responsive rounded"
-                src="/img/asset3.jpg"
+                src="/img/asset2.jpg"
                 alt="Jasa Undangan Digital - ryza.inkara.id"
+                priority
               />
             </motion.div>
           </Link>
@@ -150,8 +155,28 @@ const Gallery = () => {
                 objectFit="cover"
                 objectPosition="center"
                 className="img-responsive rounded"
-                src="/img/asset3.jpg"
+                src="/img/asset2.jpg"
                 alt="Jasa Undangan Digital - ryza.inkara.id"
+                priority
+              />
+            </motion.div>
+          </Link>
+          <Link href="/img/asset1.jpg">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+            >
+              <Image
+                width={100}
+                height={100}
+                layout="responsive"
+                objectFit="cover"
+                objectPosition="center"
+                className="img-responsive rounded"
+                src="/img/asset1.jpg"
+                alt="Jasa Undangan Digital - ryza.inkara.id"
+                priority
               />
             </motion.div>
           </Link>
@@ -170,24 +195,7 @@ const Gallery = () => {
                 className="img-responsive rounded"
                 src="/img/asset3.jpg"
                 alt="Jasa Undangan Digital - ryza.inkara.id"
-              />
-            </motion.div>
-          </Link>
-          <Link href="/img/asset3.jpg">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
-            >
-              <Image
-                width={100}
-                height={100}
-                layout="responsive"
-                objectFit="cover"
-                objectPosition="center"
-                className="img-responsive rounded"
-                src="/img/asset3.jpg"
-                alt="Jasa Undangan Digital - ryza.inkara.id"
+                priority
               />
             </motion.div>
           </Link>

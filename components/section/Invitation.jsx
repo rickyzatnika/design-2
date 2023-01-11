@@ -17,7 +17,12 @@ const Invitation = () => {
           </p>
         </div>
         <div className="w-full grid gap-4 sm:gap-8 grid-cols-1 sm:grid-cols-2 pt-14">
-          <div className="w-full h-full text-center mb-6 sm:mb-0">
+          <motion.div
+            initial={{ opacity: 0, scaleY: 0 }}
+            whileInView={{ opacity: 1, scaleY: 1 }}
+            transition={{ duration: 1 }}
+            className="w-full h-full text-center mb-6 sm:mb-0"
+          >
             <Image
               src="/img/man.png"
               alt="profile heri"
@@ -45,7 +50,7 @@ const Invitation = () => {
             >
               Putra Sulung dari Bpk.H.Djaja Sukmara dan Ibu Melisa Sukmara
             </motion.p>
-          </div>
+          </motion.div>
           <div className="w-full h-full text-center rounded-full">
             <Image
               src="/img/woman.png"

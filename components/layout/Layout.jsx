@@ -7,9 +7,9 @@ import Header from "../header/Header";
 const Layout = ({ children }) => {
   return (
     <>
-      <div className="relative">
+      <div className="relative w-full">
         <Header />
-        <main className="w-full sm:w-[60%] pt-40 px-2 py-4 h-full  mx-auto ">
+        <main className="w-full md:w-[60%] pt-40 px-2 py-4 h-full  mx-auto ">
           {children}
         </main>
         <BottomNavbar />
