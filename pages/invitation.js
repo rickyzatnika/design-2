@@ -4,11 +4,9 @@ import {
   Gallery,
   CommentForm,
   SubFooter,
+  Layout,
+  Invitation,
 } from "../components";
-import dynamic from "next/dynamic";
-
-const Layout = dynamic(() => import("../components/layout/Layout"));
-const Invitation = dynamic(() => import("../components/section/Invitation"));
 
 const Invite = ({ posts }) => {
   return (

@@ -4,17 +4,17 @@ import { HiPause, HiPlay } from "react-icons/hi";
 const SoundTrack = () => {
   const [latestScrollY, setLatestScrollY] = useState(false);
   const [showAudio, setShowAudio] = useState(true);
-  const [isPlay, setIsPlay] = useState(false);
-  const audioEl = useRef();
+  // const [isPlay, setIsPlay] = useState(false);
+  // const audioEl = useRef();
 
-  const playSong = () => {
-    setIsPlay(true);
-    audioEl.current.play();
-  };
-  const pauseSong = () => {
-    setIsPlay(false);
-    audioEl.current.pause();
-  };
+  // const playSong = () => {
+  //   setIsPlay(true);
+  //   audioEl.current.play();
+  // };
+  // const pauseSong = () => {
+  //   setIsPlay(false);
+  //   audioEl.current.pause();
+  // };
 
   useEffect(() => {
     const hideAudio = () => {
@@ -41,7 +41,6 @@ const SoundTrack = () => {
   return (
     <>
       <audio
-        ref={audioEl}
         autoPlay
         controls
         loop
