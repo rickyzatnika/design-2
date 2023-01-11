@@ -32,11 +32,16 @@ const Gallery = () => {
             objectFit="cover"
           />
         </div>
-        <div className="text-center pb-10">
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="text-center pb-10"
+        >
           <h3 className="invitation font-medium text-orange-900 text-4xl sm:text-6xl">
             Prewedding Gallery
           </h3>
-        </div>
+        </motion.div>
         <LightGallery
           mode="lg-fade"
           onInit={onInit}

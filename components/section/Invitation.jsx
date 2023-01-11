@@ -52,9 +52,9 @@ const Invitation = () => {
             </motion.p>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 70 }}
+            initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, delay: 0.1 }}
+            transition={{ duration: 1, delay: 0.1 }}
             className="w-full h-full text-center rounded-full"
           >
             <Image

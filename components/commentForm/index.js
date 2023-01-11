@@ -4,11 +4,17 @@ import moment from "moment";
 import Swal from "sweetalert2";
 import { ImPushpin } from "react-icons/im";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const CommentForm = () => {
   const { register, handleSubmit, reset } = useForm();
   const [loading, setLoading] = useState(false);
   const [posts, setPosts] = useState([]);
+
+  /**
+   * PRODUCTION
+   * DEV
+   */
 
   const formSubmit = async ({ name, message, presence, attend }) => {
     await axios
@@ -50,11 +56,16 @@ const CommentForm = () => {
         });
       });
   };
+  /**
+   * PRODUCTION
+   * DEV
+   */
+
   const getUser = async () => {
-    const req = await fetch(
+    const req = await axios.get(
       `${process.env.NEXT_PUBLIC_PRODUCTION_GET}/api/hadeuh`
     );
-    const post = await req.json();
+    const post = await req.data;
     setPosts(post);
   };
   useEffect(() => {
@@ -149,7 +160,12 @@ const CommentForm = () => {
           {posts.length}
         </h2>
 
-        <div className="mb-4 antialiased bg-white/70 p-4 shadow-lg mt-6">
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="mb-4 antialiased bg-white/70 p-4 shadow-lg mt-6"
+        >
           <div className="items-center border-b border-amber-900/40 pb-1 mb-4">
             <div className="flex items-center justify-between">
               <div className=" flex items-center gap-1">
@@ -167,11 +183,14 @@ const CommentForm = () => {
             Happy wedding Ridwan & Winda, semoga menjadi keluarga yang Sakinah,
             Mawadah & Warohmah.. <br /> Amiin .. 🤲{" "}
           </p>
-        </div>
+        </motion.div>
         <div className="flex flex-col-reverse ">
           {posts.map((data, i) => (
-            <div
-              key={i}
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              key={data._id}
               className="antialiased mb-4 bg-white/70 p-4 relative shadow-lg"
             >
               <div className="items-center border-b border-amber-900/40 pb-1 mb-4">
@@ -193,7 +212,7 @@ const CommentForm = () => {
                 <em className="text-sm text-[#989898]">{data.createdAt}</em>
               </div>
               <p className="mb-6 text-[#555] text-lg">{data.message}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

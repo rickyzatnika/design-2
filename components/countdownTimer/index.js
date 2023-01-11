@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function CountDownTimer({ ...props }) {
   const [timerDays, setTimerDays] = useState("00");
@@ -43,8 +44,13 @@ export default function CountDownTimer({ ...props }) {
     <>
       <div className="w-full flex items-center sm:justify-evenly justify-center gap-1 h-full pt-8">
         {/* Timer Days */}
-        <div className=" flex flex-col items-center ">
-          <div className="p-3 shadow-md shadow-[#cacaca] backdrop-blur-xl rounded">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.1 }}
+          className=" flex flex-col items-center "
+        >
+          <div className="p-3 shadow-md bg-white/60 shadow-[#cacaca] backdrop-blur rounded">
             <div className="text-3xl sm:text-7xl rounded-bl-md rounded-br-md font-bold bottom flex items-end">
               <span className="bg-gradient-to-tr from-orange-900 to-orange-100 bg-clip-text text-transparent">
                 {timerDays}
@@ -54,10 +60,15 @@ export default function CountDownTimer({ ...props }) {
           <small className="bg-orange-900/60  w-full text-center text-[#E7E7E7] text-md sm:text-lg">
             Hari
           </small>{" "}
-        </div>
+        </motion.div>
         {/* Timer Hours */}
-        <div className=" flex flex-col items-center ">
-          <div className="p-3 shadow-md shadow-[#cacaca] backdrop-blur-xl rounded">
+        <motion.div
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className=" flex flex-col items-center "
+        >
+          <div className="p-3 bg-white/60 shadow-md shadow-[#cacaca] backdrop-blur-xl rounded">
             <div className="text-3xl sm:text-7xl rounded-bl-md rounded-br-md font-bold bottom flex items-end">
               <span className="bg-gradient-to-tr from-orange-900 to-orange-100 bg-clip-text text-transparent">
                 {timerHours}
@@ -67,10 +78,15 @@ export default function CountDownTimer({ ...props }) {
           <small className="bg-orange-900/60  w-full text-center text-[#E7E7E7] text-md sm:text-lg">
             Jam
           </small>{" "}
-        </div>
+        </motion.div>
         {/* Timer Minutes */}
-        <div className=" flex flex-col items-center ">
-          <div className="p-3 shadow-md shadow-[#cacaca] backdrop-blur-xl rounded">
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className=" flex flex-col items-center "
+        >
+          <div className="p-3 bg-white/60 shadow-md shadow-[#cacaca] backdrop-blur-xl rounded">
             <div className="text-3xl sm:text-7xl rounded-bl-md rounded-br-md font-bold bottom flex items-end">
               <span className="bg-gradient-to-tr from-orange-900 to-orange-100 bg-clip-text text-transparent">
                 {timerMinutes}
@@ -80,10 +96,15 @@ export default function CountDownTimer({ ...props }) {
           <small className="bg-orange-900/60  w-full text-center text-[#E7E7E7] text-md sm:text-lg">
             Menit
           </small>
-        </div>
+        </motion.div>
         {/* Timer Second */}
-        <div className=" flex flex-col items-center ">
-          <div className="p-3 shadow-md shadow-[#cacaca] backdrop-blur-xl rounded">
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className=" flex flex-col items-center "
+        >
+          <div className="p-3 bg-white/60 shadow-md shadow-[#cacaca] backdrop-blur-xl rounded">
             <div className="text-3xl sm:text-7xl rounded-bl-md rounded-br-md font-bold bottom flex items-end">
               <span className="bg-gradient-to-tr from-orange-900 to-orange-100 bg-clip-text text-transparent">
                 {timerSeconds}
@@ -93,7 +114,7 @@ export default function CountDownTimer({ ...props }) {
           <small className="bg-orange-900/60  w-full text-center text-[#E7E7E7] text-md sm:text-lg">
             Detik
           </small>
-        </div>
+        </motion.div>
       </div>
     </>
   );

@@ -46,7 +46,12 @@ const EventDate = () => {
           Sabtu, 5 Agustus 2023
         </p>
         <CountDownTimer />
-        <div className="bg-white/70 backdrop-blur-sm shadow-lg rounded shadow-black/10 flex flex-col leading-relaxed items-center justify-center p-6 mt-20">
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="bg-white/70 backdrop-blur-sm shadow-lg rounded shadow-black/10 flex flex-col leading-relaxed items-center justify-center p-6 mt-20"
+        >
           <h6 className="invitation text-4xl pb-3 text-orange-900">Tempat :</h6>
           <p className="w-5/6 text-center pb-5 text-[#555]">
             Hotel Savoy Homann, Jl. Asia Afrika No.112, Cikawao, Kec. Lengkong,
@@ -60,7 +65,7 @@ const EventDate = () => {
               Google Maps
             </button>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </>
   );
