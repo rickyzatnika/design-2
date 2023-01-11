@@ -1,38 +1,13 @@
-import {
-  VideoWedding,
-  EventDate,
-  Gallery,
-  CommentForm,
-  SubFooter,
-  Layout,
-  Invitation,
-} from "../components";
+import { Layout, Home } from "../components";
 
-const Invite = ({ posts }) => {
+const Invite = () => {
   return (
     <>
       <Layout>
-        <VideoWedding />
-        <Invitation />
-        <EventDate />
-        <Gallery />
-        <CommentForm posts={posts} />
-        <SubFooter />
+        <Home />
       </Layout>
     </>
   );
 };
 
 export default Invite;
-
-export async function getServerSideProps() {
-  const req = await fetch(
-    `${process.env.NEXT_PUBLIC_PRODUCTION_GET}/api/hadeuh`
-  );
-  const posts = await req.json();
-  return {
-    props: {
-      posts,
-    },
-  };
-}

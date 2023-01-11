@@ -9,3 +9,4 @@ export { default as Gallery } from "./section/Gallery";
 export { default as SubFooter } from "./section/SubFooter";
 export { default as CommentForm } from "./commentForm";
 export { default as Loading } from "./loader/Loading";
+export { default as Home } from "./home";

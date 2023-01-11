@@ -5,9 +5,10 @@ import Swal from "sweetalert2";
 import { ImPushpin } from "react-icons/im";
 import { useEffect, useState } from "react";
 
-const CommentForm = ({ posts }) => {
+const CommentForm = () => {
   const { register, handleSubmit, reset } = useForm();
   const [loading, setLoading] = useState(false);
+  const [posts, setPosts] = useState([]);
 
   const formSubmit = async ({ name, message, presence, attend }) => {
     await axios
@@ -49,6 +50,16 @@ const CommentForm = ({ posts }) => {
         });
       });
   };
+  const getUser = async () => {
+    const req = await fetch(
+      `${process.env.NEXT_PUBLIC_PRODUCTION_GET}/api/hadeuh`
+    );
+    const post = await req.json();
+    setPosts(post);
+  };
+  useEffect(() => {
+    getUser();
+  }, []);
 
   useEffect(() => {
     setInterval(() => {
