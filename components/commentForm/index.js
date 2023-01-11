@@ -98,7 +98,7 @@ const CommentForm = () => {
           <input
             type="text"
             placeholder="Nama"
-            className="w-full py-2 px-4  rounded text-[#777] focus:outline-amber-800  "
+            className="w-full py-2 px-4  rounded text-[#777] focus:outline-amber-800 placeholder:italic "
             {...register("name", { required: true })}
           />
 
@@ -107,8 +107,8 @@ const CommentForm = () => {
               name=""
               cols="100"
               rows="10"
-              className="w-full p-4  rounded text-[#777] focus:outline-amber-800"
-              placeholder="Pesan . . ."
+              className="w-full p-4 placeholder:italic rounded text-[#777] focus:outline-amber-800"
+              placeholder="Pesan min 10 karakter ... "
               {...register("message", { required: true })}
             ></textarea>
           </div>

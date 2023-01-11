@@ -9,9 +9,24 @@ const createUser = async (req, res) => {
       if (existUser) {
         throw new Error(`User ${name} already exists`);
       }
+      if (!/^[a-zA-Z]+$/.test(name)) {
+        res.status(400).json({ error: "Name must only contain letters" });
+        return;
+      }
+
+      if (name.length < 3) {
+        res.status(400).json({ error: "Name must only contain letters" });
+        return;
+      }
+
       const message = req.body.message;
-      if (message.length < 3) {
-        res.send({ error: msg("message too short") });
+      if (!message.trim()) {
+        res.status(400).json({ error: "message too short" });
+        return;
+      }
+      if (message.length < 10) {
+        res.status(400).json({ error: "message too short" });
+        return;
       }
 
       const create = await new User({
@@ -24,7 +39,7 @@ const createUser = async (req, res) => {
       create.save();
       return res.status(200).json(create);
     } catch (error) {
-      res.status(401).send({ error: "error boss" });
+      res.status(500).json({ error: "error boss" });
     }
   }
 };
