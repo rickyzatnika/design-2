@@ -5,7 +5,12 @@ const Invitation = () => {
   return (
     <>
       <div id="invitation" className="w-full h-full pt-20 sm:pt-52">
-        <div className="leading-relaxed text-center antialiased">
+        <motion.div
+          initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="leading-relaxed text-center antialiased"
+        >
           <h2 className="mb-3 text-4xl sm:text-6xl text-orange-800/80 invitation tracking-wide">
             Assalamualaikum Wr. Wb.
           </h2>
@@ -15,7 +20,7 @@ const Invitation = () => {
             Bapak/Ibu/Saudara/Saudari dan berbagi kegembiraan pada pernikahan
             kami
           </p>
-        </div>
+        </motion.div>
         <div className="w-full grid gap-4 sm:gap-8 grid-cols-1 sm:grid-cols-2 pt-14">
           <motion.div
             initial={{ opacity: 0, y: 60 }}

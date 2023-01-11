@@ -5,10 +5,12 @@ import EventDate from "../section/EventDate";
 import Gallery from "../section/Gallery";
 import CommentForm from "../commentForm";
 import SubFooter from "../section/SubFooter";
+import Canvas from "../canvas/Canvas";
 
 const Home = () => {
   return (
     <>
+      <Canvas />
       <VideoWedding />
       <Invitation />
       <EventDate />

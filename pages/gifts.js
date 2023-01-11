@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BottomNavbar } from "../components";
+import { BottomNavbar, Canvas } from "../components";
 import Image from "next/legacy/image";
 import Swal from "sweetalert2";
 import { motion } from "framer-motion";
@@ -72,6 +72,7 @@ const Gifts = () => {
           popup: "animate__animated animate__fadeOutUp",
         },
       });
+
       setCopyText(true);
     }, 500);
 
@@ -81,13 +82,26 @@ const Gifts = () => {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0.1, scaleY: 0 }}
-        whileInView={{ opacity: 1, scaleY: 1 }}
-        transition={{ duration: 1 }}
-        className="w-full bg-gradient-to-br to-amber-400/20 via-white from-purple-400/30 backdrop-blur-sm h-screen flex flex-col items-center justify-center "
-      >
-        <div className=" w-5/6 sm:w-4/6 bg-white/60 shadow-2xl shadow-amber-500/10  py-10 sm:py-20 rounded-3xl">
+      <div className="fixed left-0 top-0 bottom-0 right-0 -z-50">
+        <Image
+          src="/img/10.jpg"
+          alt=""
+          width={100}
+          height={75}
+          layout="responsive"
+          objectFit="cover"
+          objectPosition="center"
+          priority
+        />
+      </div>
+      <div className="w-full relative bg-gradient-to-br to-amber-400/30 via-white/20 from-amber-100/40 backdrop-blur-[1px]  h-screen flex flex-col items-center justify-center ">
+        <Canvas />
+        <motion.div
+          initial={{ opacity: 0.1, scaleY: 0 }}
+          whileInView={{ opacity: 1, scaleY: 1 }}
+          transition={{ duration: 1 }}
+          className=" w-5/6 sm:w-4/6 bg-white/70 shadow-2xl shadow-amber-500/10  py-10 sm:py-20 rounded-3xl"
+        >
           <div className="flex items-center justify-center gap-4 mb-5">
             <button
               onClick={showBri}
@@ -137,7 +151,14 @@ const Gifts = () => {
                 onClick={briClick}
                 className="py-1 px-6 border rounded-full hover:bg-[#161616] hover:text-[#e6e6e6] border-[#161616]"
               >
-                {copyText ? <p>Salin No.Rekening</p> : <p>loading...</p>}
+                {copyText ? (
+                  <p>Salin No.Rekening</p>
+                ) : (
+                  <div className="flex w-full items-center justify-center gap-2">
+                    <p>loading</p>
+                    <div className="animate-spin border-2 border-black border-b-black/20 w-3 h-3 rounded-full"></div>
+                  </div>
+                )}
               </button>
             </div>
           )}
@@ -168,12 +189,19 @@ const Gifts = () => {
                 onClick={bcaClick}
                 className="py-1 px-6 border rounded-full hover:bg-[#161616] hover:text-[#e6e6e6] border-[#161616]"
               >
-                {copyText ? <p>Salin No.Rekening</p> : <p>loading...</p>}
+                {copyText ? (
+                  <p>Salin No.Rekening</p>
+                ) : (
+                  <div className="flex w-full items-center justify-center gap-2">
+                    <p>loading</p>
+                    <div className="animate-spin border-2 border-black border-b-black/20 w-3 h-3 rounded-full"></div>
+                  </div>
+                )}
               </button>
             </div>
           )}
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
       <BottomNavbar />
     </>
   );
